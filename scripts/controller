@@ -4,7 +4,7 @@ dir="/home/root"
 cmd="./Controller"
 user=""
 
-name=`basename $0`
+name="controller"
 pid_file="/var/run/$name.pid"
 stdout_log="/var/log/$name.log"
 stderr_log="/var/log/$name.err"
