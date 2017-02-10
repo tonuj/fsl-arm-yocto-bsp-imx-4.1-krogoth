@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Install Android
+Comment=SOLOCustomBoard
+Exec=/usr/bin/terminal bash -c "/usr/bin/install_android.sh -b scb; read"
+Icon=media-flash
+Terminal=false
+Categories=GTK;Application;
+StartupNotify=true
