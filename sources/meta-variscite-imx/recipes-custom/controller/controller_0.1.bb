@@ -16,10 +16,18 @@ SRC_URI = "git://bitbucket.org/tonu/controller.git;protocol=http"
 
 S = "${WORKDIR}/git"
 
-inherit qmake5
 
-
+INITSCRIPT_NAME = "ctr"
+INITSCRIPT_PARAMS = "defaults 40"
 EXTRA_QMAKEVARS_PRE += "target.path=/home/root"
+
+inherit qmake5 update-rc.d
+
+do_install_append() {
+	install -d ${D}${sysconfdir}/init.d
+	install -m 0755 ${S}/ctr ${D}${sysconfdir}/init.d/ctr
+}
   
 #PACKAGES = "${PN}"
 FILES_${PN} += "/home/root/Controller"
+FILES_${PN} += "${sysconfdir}/init.d/ctr"
