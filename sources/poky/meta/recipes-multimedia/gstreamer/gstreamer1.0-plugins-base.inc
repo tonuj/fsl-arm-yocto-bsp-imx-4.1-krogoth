@@ -19,7 +19,7 @@ PACKAGECONFIG ??= " \
     ${GSTREAMER_ORC} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'alsa', 'alsa', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11', '', d)} \
-    gio-unix-2.0 ivorbis ogg pango theora vorbis \
+    gio-unix-2.0 ivorbis ogg pango theora vorbis opus \
 "
 
 X11DEPENDS = "virtual/libx11 libsm libxrender libxv"
@@ -36,6 +36,7 @@ PACKAGECONFIG[theora]       = "--enable-theora,--disable-theora,libtheora"
 PACKAGECONFIG[visual]       = "--enable-libvisual,--disable-libvisual,libvisual"
 PACKAGECONFIG[vorbis]       = "--enable-vorbis,--disable-vorbis,libvorbis"
 PACKAGECONFIG[x11]          = "${X11ENABLEOPTS},${X11DISABLEOPTS},${X11DEPENDS}"
+PACKAGECONFIG[opus]            = "--enable-opus,--disable-opus,libopus"
 
 EXTRA_OECONF += " \
     --enable-zlib \
